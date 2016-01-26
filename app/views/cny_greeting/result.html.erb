@@ -1,0 +1,15 @@
+<h1>CNY GREETING</h1>
+
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag :filter,nil, placeholder: "Specify Filter" %>
+  <%= submit_tag "Filter" %>
+<% end %>
+
+<!-- Generally we don't want to put logic in our views -->
+<% if params[:filter].present? %>
+  Filters: <%= params[:filter] || "All Greeting Types" %>
+<% end %>
+
+<%= image_tag "cny_greeting_monkey.jpg" %>
+
+<h2><%= @cny_greeting %></h2>
